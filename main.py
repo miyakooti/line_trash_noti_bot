@@ -34,7 +34,7 @@ elif weekday_num == 6:
 def main():
     
     if weekday_num != "":
-        messages = TextSendMessage(text=text)
+        messages = TextSendMessage(text=text + "の日…ってコト！？")
         app.push_message(USER_ID, messages=messages)
     
 if __name__ == "__main__":
