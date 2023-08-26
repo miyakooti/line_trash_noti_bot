@@ -7,6 +7,7 @@ name: make_chat
 # 曜日指定には [0, 6] の整数を使います。 0 が日曜日、 6 が土曜日です。
 # 実はgithub actionsのcronの時刻はUTCなので、日本時間に合わせるために日本時刻から9時間マイナスで設定する必要があります。
 on:
+  push:
   schedule:
     - cron: '0 22 * * *'
 
@@ -19,7 +20,7 @@ jobs:
     steps:
       # リポジトリからチェックアウトして以下の処理を実行していく
       - uses: actions/checkout@v2
-      - name: Set up Python 3.8
+      - name: Set up Python 3.9.17
         uses: actions/setup-python@v1
         with:
           python-version: 3.8
@@ -29,7 +30,7 @@ jobs:
           python -m pip install --upgrade pip
           # 必要なパッケージインストール
           pip install line-bot-sdk
+          pip install jupyter
       - name: Run script
         run: |
-          # main.pyの実行
-          python main.py
+          jupyter execute main.ipynb
