@@ -33,4 +33,5 @@ jobs:
           pip install jupyter
       - name: Run script
         run: |
+          ls
           jupyter execute main.ipynb
