@@ -16,3 +16,7 @@ jobs:
 
     - name: Deploy Functions
       run: sh cd/deploy.sh prtimes 1024
+
+      
+    - name: Deploy Functions
+      run: sh cd/deploy.sh salesforce 1024 800

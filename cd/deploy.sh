@@ -25,5 +25,9 @@ if [[ -n "$3" ]]; then
   # 第３引数を処理する
   echo "第３引数 = $3"
 else
+  echo "timeout is default"
   # 第３引数がない場合は、何もしない
 fi
+
+echo $2
+echo $3
