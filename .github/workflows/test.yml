@@ -1,0 +1,18 @@
+name: Deploy Cloud Funcstions
+
+on:
+  workflow_dispatch:
+  push:
+    branches: [ master ]
+
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+
+    steps:
+
+    - uses: actions/checkout@v2
+
+    - name: Deploy Functions
+      run: sh cd/deploy.sh prtimes 1024
